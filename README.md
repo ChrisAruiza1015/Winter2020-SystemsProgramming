@@ -4,11 +4,8 @@ CPE 357 - Winter 2020 - C language
 Program 1 1/26/2020
 
 A program that blends two 24 bit BMP images together. 
-
 comand line parameters :[programname] [imagefile1] [imagefile2] [ratio] [outputfile]
-
 The ratio should determine what decimal percentage of imagefile1 and imagefile2 will be in the result. 
-
 Uses bilinear interpolation if the resolution of the two images is not the same. 
 
 Program 2 2/6/2020
