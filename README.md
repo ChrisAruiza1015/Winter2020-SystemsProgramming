@@ -4,7 +4,7 @@ CPE 357 - Winter 2020 - C language
 Program 1 1/26/2020: Blend two BMP images
 
 A program that blends two 24 bit BMP images together. 
-comand line parameters :[programname] [imagefile1] [imagefile2] [ratio] [outputfile]
+command line parameters :[programname] [imagefile1] [imagefile2] [ratio] [outputfile]
 The ratio should determine what decimal percentage of imagefile1 and imagefile2 will be in the result. 
 Uses bilinear interpolation if the resolution of the two images is not the same. 
 
@@ -32,9 +32,14 @@ This program will let you enter its own shell: findstuff$
 • find <”text”> the child tries to find a certain text in all files by opening one file at a time, reading the content into a malloc’ed memory, and tries to find the string. When done, it list all files and where to find them with this string.
 • -f:XYZ .. means file ending. If this flag is set, search only in files with this ending.
 • list: lists all running child processes, their pid, and what they try to do.
-• kill <num>: kills a child process, and so ends its finding attemps. 
-• quit or q: quits the program and all child processes immediatelly.
+• kill <num>: kills a child process, and so ends its finding attempts. 
+• quit or q: quits the program and all child processes immediately.
 This program limits the number of child processes to 10. 
+
+Program 5: Message Passing Interface/Syncing programs
+Program 1 multiplies 2 10x10 matrices by sharing the work with its copies over shared memory. 
+Program1 is called multiple times at the same time, and each instance of the program shares 10x10 matrices and works on a certain part of the matrix multiplication, so that the computational time becomes a fraction in comparison with only one instance. Includes a function that syncs each instance of program1 until each program has reached the same point in code to avoid prematurely moving on and printing the final matrice. 
+program2.c calls program1 several times based on the arguments. It gets two arguments: argv[1]: The program which will be called with execv (program1.c) and argv[2]: How many instances of program one should be called. 
 
 
 Lab 2 - 1/17/2020: Double-linked list
@@ -47,8 +52,8 @@ Lab 3 - 1/24/2020: Made my own heap function
 
 A heap simulation in uninitialized space to understand how malloc and free work.
 mymalloc function searches in the list for a free chunk that is big enough for the requested memory and returns the address.
-myfree function sets the given chunk to “free”, meaning the struct variable info=0. If the previrous or next chunk is free as well, it should remove the chunk(s) and link both ends together.
-analyse function goes through the list of chunks and prints the contennts of the structure for every chunk.
+myfree function sets the given chunk to “free”, meaning the struct variable info=0. If the previous or next chunk is free as well, it should remove the chunk(s) and link both ends together.
+analyse function goes through the list of chunks and prints the contents of the structure for every chunk.
 
 Lab 4 1/31/2020: Multiprocess editing BMP photo brightness
 
@@ -60,9 +65,9 @@ Lab 5 2/7/2020: fork() practice
 
 Practice fork() by printing numbers in different orders and waiting for the kid. 
 
-Lab 6 2/14/2020: indestructable (nearly) child Program. 
+Lab 6 2/14/2020: indestructible (nearly) child Program. 
 
-Forks a child process after printing the programs PID.The child processs prints the currect time and the current content of the executable’s folder (all files) every 10 seconds and it's PID. Uses a signal handler to avoid termination or killing and the parent process checks if the child process ended with wait(). If so, the child is forked again. 
+Forks a child process after printing the programs PID.The child process prints the correct time and the current content of the executable’s folder (all files) every 10 seconds and it's PID. Uses a signal handler to avoid termination or killing and the parent process checks if the child process ended with wait(). If so, the child is forked again. 
 
 Lab 7 2/22/2020: Mutual Exclusion
 
@@ -72,7 +77,7 @@ Uses one shared memory array of 1000 characters and will fork into two processes
 Lab 8 2/28/2020: Made my own pipe() function
 
 Uses a struct objet with a pipebuffer, buffersize, and start/end. Has three functions:
-void init_pipe: initalizes the pipe with a size of "size" and sets start and end.
+void init_pipe: initializes the pipe with a size of "size" and sets start and end.
 int mywrite: writes "size" bytes from buffer into the pipe, returns size
 int myread: reads "size" bytes from pipe into buffer, returns how much it read (max size), 0 if pipe is empty
 
